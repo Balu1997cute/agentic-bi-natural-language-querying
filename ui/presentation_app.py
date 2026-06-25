@@ -144,30 +144,6 @@ with st.sidebar:
     except FileNotFoundError:
         st.warning("Prompts file not found.")
 
-
-
-
-
-# --- TOP BADGE (Developer Credential) ---
-col_h1, col_h2 = st.columns([3, 1])
-with col_h1:
-    st.markdown("")  # Spacer for alignment
-with col_h2:
-    st.markdown("""
-<div style='background: linear-gradient(135deg, #7267EF 0%, #00D2FF 100%); padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 20px rgba(114, 103, 239, 0.4); border: 1px solid rgba(255, 255, 255, 0.3); text-align: center; margin-bottom: 5px; transition: transform 0.2s;'>
-    <p style='margin: 0; color: #ffffff; font-weight: 800; font-size: 0.9rem; line-height: 1.2; letter-spacing: 0.5px;'>Ratnesh Kumar Singh</p>
-    <p style='margin: 2px 0 8px 0; color: rgba(255, 255, 255, 0.9); font-size: 0.75rem; font-weight: 600;'>Data Scientist (AI/ML) | 4+ Yrs</p>
-    <div style='display: flex; justify-content: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 8px;'>
-        <a href='https://github.com/Ratnesh-181998' target='_blank' style='color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 5px;'>
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" width="16" height="16"/> GitHub
-        </a>
-        <a href='https://www.linkedin.com/in/ratneshkumar1998/' target='_blank' style='color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 5px;'>
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" width="16" height="16"/> LinkedIn
-        </a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
 # --- HERO HEADER (Premium UI) ---
 st.markdown("""
 <div style='text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(114, 103, 239, 0.1) 0%, rgba(0, 210, 255, 0.1) 100%); border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(114, 103, 239, 0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.2);'>
@@ -203,7 +179,7 @@ with tab1:
     # 1. Header Section
     st.markdown("""
     <div style='background: rgba(114, 103, 239, 0.1); padding: 20px; border-radius: 10px; border-left: 5px solid #7267EF; margin-bottom: 20px;'>
-        <h3 style='margin: 0; color: #ffff;'>Agentic Ratnesh AI Analyst</h3>
+        <h3 style='margin: 0; color: #ffff;'>Agentic AI Analyst</h3>
         <p style='margin: 5px 0 0 0; color: #e2e8f0;'>Asking questions to your data has never been easier. Driven by <b>Multi-Agent LangGraph</b>. Type a question or pick a sample below to see the <b>Agentic Swarm</b> in action.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -394,7 +370,7 @@ with tab1:
     st.markdown("""
 <div style='text-align: center; padding: 10px; margin-bottom: 5px;'>
     <h2 style='color: #ffffff; font-weight: 800; margin: 0; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;'>
-    ✨ QUERIES - ANSWER'S TO <span style='color: #3498db;'>RATNESH AI ANALYST</span>
+    ✨ QUERIES - ANSWER'S TO <span style='color: #3498db;'>AI ANALYST</span>
     </h2>
 </div>
 <hr style='border: 1px solid #e74c3c; background-color: #e74c3c; opacity: 1; margin: 5px 0 30px 0;'>
@@ -495,7 +471,7 @@ with tab1:
     # Heading for Input Section
     st.markdown("""
     <h4 style='color: #3498db; margin: 0 0 10px 0; font-weight: 700; font-size: 1.2rem;'>
-    💬 Your Query - Answering to Ratnesh AI Analyst
+    💬 Your Query - Answering to Agentic     AI Analyst
     </h4>
     """, unsafe_allow_html=True)
 
@@ -1869,7 +1845,6 @@ st.markdown("<hr style='border: 1px solid #e74c3c; background-color: #e74c3c; op
 st.markdown("""
 <div style='text-align: center; padding: 20px 20px 10px 20px; background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(52, 152, 219, 0.15) 100%); border-radius: 10px; border-top: 2px solid #2ecc71;'>
     <p style='color: #2ecc71; font-weight: 600; font-size: 1.1rem; margin-bottom: 10px;'>🤖 Agentic BI SaaS Platform</p>
-    <p style='color: #3498db; font-weight: 600; font-size: 1.1rem; margin-bottom: 15px;'>Built with ❤️ by Ratnesh Kumar Singh | Data Scientist (AI/ML Engineer 4+Years Exp)</p>
     <div style='background: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 8px; display: inline-block; margin-bottom: 10px;'>
         <span style='color: #bdc3c7; font-size: 0.9rem; margin-right: 10px; font-weight: 600;'>Tech Stack Used:</span>
         <span style='display: inline-block; padding: 4px 10px; margin: 2px; border-radius: 15px; background-color: #2c3e50; border: 1px solid #3498db; font-size: 0.8em; color: white;'>LangGraph 🦜🕸️</span>
@@ -1883,18 +1858,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-# Social links
-col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
-
-with col2:
-    st.markdown('<p style="text-align: center; margin: 0;"><a href="https://github.com/Ratnesh-181998" target="_blank" style="text-decoration: none; color: #2ecc71; font-size: 1.1rem; font-weight: 600;">🔗 GitHub</a></p>', unsafe_allow_html=True)
-
-with col3:
-    st.markdown('<p style="text-align: center; margin: 0;"><a href="mailto:rattudacsit2021gate@gmail.com" style="text-decoration: none; color: #3498db; font-size: 1.1rem; font-weight: 600;">📧 Email</a></p>', unsafe_allow_html=True)
-
-with col4:
-    st.markdown('<p style="text-align: center; margin: 0;"><a href="https://www.linkedin.com/in/ratneshkumar1998/" target="_blank" style="text-decoration: none; color: #9b59b6; font-size: 1.1rem; font-weight: 600;">💼 LinkedIn</a></p>', unsafe_allow_html=True)
 
 # Close the visual footer
 st.markdown("""
