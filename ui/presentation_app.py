@@ -28,61 +28,80 @@ st.set_page_config(
 st.markdown("""
     <style>
     /* Global Styles */
-    :root {
-        --primary-gold: #FFD700;
-        --secondary-gold: #FFC800;
-        --accent-blue: #2874f0;
-        --accent-green: #2ecc71;
-        --accent-purple: #9b59b6;
-        --background-dark: #0e1117;
-    }
-    
-    .stApp {
-        background-color: var(--background-dark);
-    }
-    
-    /* Sidebar Styling */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-        border-right: 3px solid var(--accent-blue);
-    }
-    
-    h1, h2, h3 {
-        color: #ffff !important;
-        font-family: 'Inter', sans-serif;
-    }
-    
-    /* Tabs & Cards (Improved Full-Width Tabs) */
-    .stTabs [data-baseweb="tab-list"] { 
-        gap: 8px; 
-        width: 100% !important;
-        display: flex !important;
-    }
-    .stTabs [data-baseweb="tab"] { 
-        height: 55px; 
-        background-color: #1e1e2d; 
-        border-radius: 8px; 
-        color: #ffffff; 
-        font-weight: 700; 
-        flex-grow: 1 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .stTabs [data-baseweb="tab"]:hover {
-        background-color: #2e2e3f;
-        transform: translateY(-2px);
-    }
-    .stTabs [data-baseweb="tab"][aria-selected="true"] { 
-        background-color: #7267EF; 
-        color: white; 
-        border: 1px solid #00D2FF;
-        box-shadow: 0 4px 15px rgba(114, 103, 239, 0.4);
-    }
-    .metric-card { background-color: #262730; padding: 20px; border-radius: 10px; border: 1px solid #41424C; text-align: center; }
-    </style>
+:root {
+    --bg:#0B1220;
+    --card:#111827;
+    --card2:#1F2937;
+    --primary:#3B82F6;
+    --success:#10B981;
+    --text:#F9FAFB;
+    --muted:#94A3B8;
+}
+
+.stApp{
+    background: var(--bg);
+}
+
+[data-testid="stSidebar"]{
+    background:#0F172A;
+    border-right:1px solid rgba(255,255,255,0.08);
+}
+
+h1,h2,h3,h4{
+    color:var(--text)!important;
+    font-family:Inter,sans-serif;
+}
+
+.block-container{
+    padding-top:1rem;
+    max-width:1600px;
+}
+
+div[data-testid="stVerticalBlock"]{
+    gap:0.6rem;
+}
+
+.stTabs [data-baseweb="tab"]{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:12px;
+    color:#CBD5E1;
+}
+
+.stTabs [aria-selected="true"]{
+    background:#2563EB!important;
+    color:white!important;
+}
+
+.metric-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:24px;
+}
+
+.glass-card{
+    background:rgba(17,24,39,.85);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:24px;
+}
+
+.stButton button{
+    border-radius:12px!important;
+    height:48px!important;
+    border:none!important;
+    font-weight:600!important;
+}
+
+.stTextArea textarea{
+    background:#111827!important;
+    color:white!important;
+    border-radius:16px!important;
+}
+
+</style>
 """, unsafe_allow_html=True)
 
 # Helper: Get IST Time
@@ -146,15 +165,10 @@ with st.sidebar:
 
 # --- HERO HEADER (Premium UI) ---
 st.markdown("""
-<div style='text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(114, 103, 239, 0.1) 0%, rgba(0, 210, 255, 0.1) 100%); border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(114, 103, 239, 0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.2);'>
-    <div style='display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;'>
-        <span style='font-size: 2.5rem;'>🤖</span>
-        <h1 style='color: #00D2FF; margin: 0; font-size: 2.5rem; font-weight: 800; text-shadow: 0 0 25px rgba(0, 210, 255, 0.4); letter-spacing: 2px; line-height: 1; font-family: "Inter", sans-serif;'>
-            AGENTIC BI SAAS
-        </h1>
-    </div>
-    <p style='font-size: 1.2rem; color: #e2e8f0; font-weight: 500; margin: 5px 0 0 0; letter-spacing: 0.5px;'>
-        Next-Gen <b style='color: #7267EF;'>Natural Language Querying</b> Powered by Multi-Agent AI
+<div class="glass-card">
+    <h1>Agentic BI</h1>
+    <p style="color:#94A3B8;font-size:18px;">
+        Enterprise AI Analyst for Natural Language Analytics
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -199,8 +213,6 @@ with tab1:
 </div>
 </div>
     """, unsafe_allow_html=True)
-    
-    
     
     # 2. Quick Prompts (User Interactive)
     if "main_query_input" not in st.session_state:
@@ -390,7 +402,7 @@ with tab1:
             # AI Summary (Using markdown for multi-line support)
             st.markdown(f"""
             <div style='background: rgba(46, 204, 113, 0.05); padding: 15px; border-radius: 12px 12px 0 0; border-left: 5px solid #2ecc71; margin-bottom: 0;'>
-                <p style='color: #2ecc71; font-weight: 700; margin: 0; font-size: 0.85rem; text-transform: uppercase;'>🤖 Ratnesh AI Analyst</p>
+                <p style='color: #2ecc71; font-weight: 700; margin: 0; font-size: 0.85rem; text-transform: uppercase;'>🤖 Agentic AI Analyst</p>
             </div>
             """, unsafe_allow_html=True)
             st.markdown(f"""
@@ -452,10 +464,6 @@ with tab1:
     }
     </style>
     """, unsafe_allow_html=True)
-    
-
-    
-
 
 
     # --- INPUT SECTION (MOVED TO BOTTOM) ---
@@ -471,7 +479,7 @@ with tab1:
     # Heading for Input Section
     st.markdown("""
     <h4 style='color: #3498db; margin: 0 0 10px 0; font-weight: 700; font-size: 1.2rem;'>
-    💬 Your Query - Answering to Agentic     AI Analyst
+    💬 Ask Your AI Analyst
     </h4>
     """, unsafe_allow_html=True)
 
